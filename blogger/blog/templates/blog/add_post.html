@@ -38,7 +38,7 @@
 
     <div class="container mt-4">
         <h1>Add a New Post</h1>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data" action="{% url 'blog:add_post' %}">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
@@ -46,14 +46,17 @@
             </div>
             <div class="mb-3">
                 <label for="content" class="form-label">Content</label>
-                <textarea class="form-control" id="content" name="content" required></textarea>
+                <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="is_published" name="is_published" checked>
                 <label class="form-check-label" for="is_published">Publish</label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <input type="file" name="image">
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload Image</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
         </form>
     </div>
 

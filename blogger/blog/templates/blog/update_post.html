@@ -24,7 +24,7 @@
             <option value="Travel" {% if post.category == 'Travel' %}selected{% endif %}>Travel</option>
         </select>
     </div>
+    
     <button type="submit" class="btn btn-info">Update</button>
-    <button type="submit" class="btn btn-info">back to Home</button>
-
+    <a href="{% url 'blog:base' %}" class="btn btn-secondary">Back to Home</a>
 </form>
